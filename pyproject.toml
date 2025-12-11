@@ -1,0 +1,36 @@
+[project]
+name = "unified-klines-streamer"
+version = "0.1.0"
+description = "A service that aggregates closed candles from multi‑exchange trade streams (Bybit, BingX, etc.), normalizes them, and fans them out to multiple channels (Redis, RabbitMQ, WebSocket, Webhook, etc.) via pluggable consumers."
+authors = [
+    {name = "Daniil Pavlovich",email = "layred.dota2@mail.ru"}
+]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+]
+
+
+
+keywords = ["cryptocurrency", "klines", "candlesticks", "bybit", "bingx", "streaming", "websocket"]
+
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[tool.poetry]
+include = [
+    "LICENSE"
+]
+homepage = "https://github.com/vispar-tech/unified-klines-streamer"
+repository = "https://github.com/vispar-tech/unified-klines-streamer"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
