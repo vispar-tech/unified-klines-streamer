@@ -1,33 +1,35 @@
 # Unified Klines Streamer
 
-A service that aggregates closed candles from multi-exchange trade streams (Bybit, BingX, etc.), normalizes them, and fans them out to multiple channels (Redis, RabbitMQ, WebSocket, Webhook, etc.) via pluggable consumers.
+A Rust service that aggregates closed candles (klines) from multiple cryptocurrency exchange trade streams (such as Bybit, BingX), normalizes their data, and publishes them to different backends (Redis, RabbitMQ, WebSocket, Webhook, etc).
 
 ## Overview
 
-This project aims to provide a unified interface for streaming candlestick (kline) data from multiple cryptocurrency exchanges. It normalizes the data format across different exchanges and distributes it to various consumers through a pluggable architecture.
+This project is written in Rust and provides a unified interface for streaming kline data from several cryptocurrency exchanges. All data is normalized into a single Rust struct and sent through multiple channels.
 
-## Features (Planned)
+## Planned Features
 
-- **Multi-Exchange Support**: Connect to multiple exchanges simultaneously
+-   **Multi-Exchange Integration**:
 
-  - Bybit
-  - BingX
-  - More exchanges to be added
+    -   Connect to several exchanges concurrently (e.g., Bybit, BingX, others).
 
-- **Data Normalization**: Standardize candlestick data format across all exchanges
+-   **Data Normalization**:
 
-- **Pluggable Consumers**: Flexible output channels
+    -   Unified `Kline` struct for candle data.
 
-  - Redis Pub/Sub
-  - RabbitMQ
-  - WebSocket Server
-  - Webhook notifications
-  - Custom consumer plugins
+-   **Output to Various Systems**:
 
-- **Real-time Streaming**: Process and distribute closed candles in real-time
+    -   Redis Pub/Sub publisher
+    -   RabbitMQ producer
+    -   WebSocket server (tokio + tungstenite)
+    -   Webhook dispatcher (reqwest)
+    -   Custom Rust consumers
 
-- **Scalable Architecture**: Designed for high-throughput scenarios
+-   **Real-Time Streaming**:
+
+    -   Processes and emits closed candles with low latency using async Rust.
 
 ## Project Status
 
-🚧 **This project is currently in early development** 🚧
+🚧 **Rust implementation in early development** 🚧
+
+PRs, ideas, and community feedback are welcome!

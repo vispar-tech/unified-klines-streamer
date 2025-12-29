@@ -1,0 +1,27 @@
+[package]
+name = "streamer"
+version = "0.1.0"
+edition = "2024"
+authors = ["Daniil Pavlovich <layred.dota2@mail.ru>"]
+description = "A service that aggregates closed candles from multi‑exchange trade streams (Bybit, BingX, etc.), normalizes them, and fans them out to multiple channels (Redis, RabbitMQ, WebSocket, Webhook, etc.) via pluggable consumers."
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/vispar-tech/unified-klines-streamer"
+homepage = "https://github.com/vispar-tech/unified-klines-streamer"
+keywords = [
+    "cryptocurrency",
+    "klines",
+    "candlesticks",
+    "bybit",
+    "bingx",
+    "streaming",
+    "websocket",
+]
+publish = false # Not a library, service project
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
